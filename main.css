@@ -1,0 +1,983 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  padding-top: 1px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #21545F;
+}
+
+/* padre general */
+.padre {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+/* primer padre */
+.header {
+  background: #21545F;
+  /* this is in case you want to add some img */
+  /* background-position: center;
+  background-attachment: contain;
+  background-size: cover; */
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+#hamburger-icon {
+  margin: auto 0;
+  display: none;
+  cursor: pointer;
+
+}
+
+#hamburger-icon div {
+  width: 35px;
+  height: 3px;
+  background-color: rgb(236, 11, 11);
+  margin: 9px 0;
+  transition: 0.4s;
+}
+
+.open .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-6px, 6px);
+  transform: rotate(-45deg) translate(-6px, 6px);
+}
+
+.open .bar2 {
+  opacity: 0;
+}
+
+.open .bar3 {
+  -webkit-transform: rotate(45deg) translate(-6px, -8px);
+  transform: rotate(45deg) translate(-6px, -8px);
+}
+
+.open #mobile-menu {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #297b8e;
+}
+
+#mobile-menu {
+  display: none;
+  position: absolute;
+  left: 0px;
+  height: calc(100vh - 50px);
+  width: 50%;
+  height: 50%;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+
+}
+
+/* esto va dentro de header AQUI VA EL LOGO LOS CONTACTOS
+Y LAS REDES SOCIALES*/
+.menu {
+  /* background: #2d4059; */
+  display: flex;
+  flex-flow: row nowrap;
+  height: 150px;
+  align-items: center;
+}
+
+/* esto va dentro de menu */
+.logo {
+  /* background: #ea5455; */
+  flex: 1 1 auto;
+  animation: change .5s infinite;
+  width: 150px;
+  height: 150px;
+}
+
+.logo a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* LOGO ANIMATION */
+@keyframes change {
+  0% {
+    filter: invert(0%)
+  }
+
+  25% {
+    filter: invert(20%)
+  }
+
+  50% {
+    filter: invert(10%)
+  }
+
+  100% {
+    filter: invert(40%)
+  }
+}
+
+.nav {
+  /* background: #ea5455; */
+  flex: 5 1 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: baseline;
+
+}
+
+.nav a {
+  color: white;
+  font-size: 15px;
+  text-transform: uppercase;
+  padding: 0 10px;
+  letter-spacing: 2px;
+}
+
+.nav a:hover {
+  color: #343434;
+}
+
+.address {
+  max-width: 200px;
+  white-space: pre-line;
+
+}
+
+.phone {
+  max-width: 280px;
+  white-space: pre-line;
+}
+
+.calendar {
+  max-width: 350px;
+  white-space: pre-line;
+}
+
+
+.social {
+  /* background: #ea5455; */
+  flex: 1.5 1 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-right: 2%;
+  gap: 25%;
+}
+
+.social a {
+  font-size: 24px;
+  color: white;
+}
+
+.social a:hover {
+  color: #343434;
+}
+
+#holidays {
+  text-decoration: none;
+  list-style: none;
+  list-style-type: none;
+}
+
+/* hasta aqui va el con tenido de menu */
+/* aqui inicia otro que seria LOS BOTONES */
+
+/* .texto-principal {
+  background: #f07b3f;
+
+}*/
+
+.buttom {
+
+  color: white;
+  padding: 5px 10px;
+  background: transparent;
+  border-radius: 0px;
+  outline: none;
+  cursor: pointer;
+  max-width: 100%;
+  margin: auto;
+}
+
+.content {
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 8%;
+  transform: traslateY(-50%);
+
+}
+
+.btn {
+  position: relative;
+  top: -10px;
+  justify-content: center;
+  text-align: center;
+  display: inline-block;
+  padding: 15px 40px;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  text-decoration: none;
+  font-size: 16px;
+  overflow: hidden;
+  transition: .4s;
+  pointer-events: painted;
+}
+
+a:hover {
+  color: #d4dee7;
+  background: #1f7370;
+  box-shadow: 0 0 10px #297b8e, 0 0 40px #297b8e, 0 0 80px #297b8e;
+  transition-delay: .6s;
+  text-decoration: none;
+}
+
+a span {
+  position: absolute;
+  display: block;
+  text-decoration: none;
+
+}
+
+a span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #8de9e2);
+  text-decoration: none;
+}
+
+a:hover span:nth-child(1) {
+  left: 100%;
+  transition: 3s;
+}
+
+a span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #8de9e2);
+}
+
+a:hover span:nth-child(3) {
+  right: 100%;
+  transition: 1s;
+  transition-delay: .5s;
+}
+
+a span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #8de9e2);
+}
+
+a:hover span:nth-child(2) {
+  top: 100%;
+  transition: 1s;
+  transition-delay: .25s;
+}
+
+a span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #8de9e2);
+}
+
+a:hover span:nth-child(4) {
+  bottom: 100%;
+  transition: 1s;
+  transition-delay: .75s;
+}
+
+/* h1 {
+  background: #ffd460;
+} */
+
+/* final del primer padre */
+
+/* AQUI VA LO QUE ES EL CARRUSEL */
+/* the section is the father and articulos is the son BUT ARTICLE IS 
+THE SON OF ARTICULOS and navegatio is a son too*/
+/* SEGUNDO PADRE */
+.section {
+  /* background: #000; */
+  display: flex;
+  flex-direction: column;
+}
+
+.articulos {
+  background: #4e4e6a;
+  flex: 2 1 auto;
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+}
+
+/* ARTICULOS ES SU PADRE es parte de articulos */
+.article {
+  /* background: #1f6cb0; */
+  flex: 1 1 40%;
+}
+
+/* SLIDER */
+
+.mySlides {
+  display: none;
+
+}
+
+img {
+  vertical-align: middle;
+}
+
+.slideshow-container {
+  display: flex;
+  top: 0px;
+  max-width: 100%;
+  position: relative;
+  margin-top: -1%;
+  flex-direction: column;
+
+}
+
+.img_1 {
+  width: 100%;
+  /* height: 39vh; */
+}
+
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: antiquewhite;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.text {
+  color: #f2f2f2;
+  font-size: 10px;
+  padding: absolute;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  bottom: 8px;
+}
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 10px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.dot {
+  cursor: pointer;
+  position: relative;
+  top: -9vh;
+  height: 10px;
+  width: 10px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+  margin-top: 1%;
+
+
+}
+
+.active,
+.dot:hover {
+  background-color: #717171;
+
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: .4
+  }
+
+  to {
+    opacity: 1
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: .4
+  }
+
+  to {
+    opacity: 1
+  }
+
+}
+
+/* responsive*/
+
+
+
+
+/* buttons */
+button {
+  background: transparent;
+  display: flex;
+  flex-direction: row;
+  border: none;
+
+}
+
+.btn {
+  position: relative;
+  top: -10px;
+  justify-content: center;
+  text-align: center;
+  display: inline-block;
+  padding: 15px 40px;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  text-decoration: none;
+  font-size: 16px;
+  overflow: hidden;
+  transition: .4s;
+  pointer-events: painted;
+}
+
+a:hover {
+  color: #d4dee7;
+  background: #1f7370;
+  box-shadow: 0 0 10px #297b8e, 0 0 40px #297b8e, 0 0 80px #297b8e;
+  transition-delay: .6s;
+  text-decoration: none;
+}
+
+a span {
+  position: absolute;
+  display: block;
+  text-decoration: none;
+
+}
+
+a span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #8de9e2);
+  text-decoration: none;
+}
+
+a:hover span:nth-child(1) {
+  left: 100%;
+  transition: 3s;
+}
+
+a span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #8de9e2);
+}
+
+a:hover span:nth-child(3) {
+  right: 100%;
+  transition: 1s;
+  transition-delay: .5s;
+}
+
+a span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #8de9e2);
+}
+
+a:hover span:nth-child(2) {
+  top: 100%;
+  transition: 1s;
+  transition-delay: .25s;
+}
+
+a span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #8de9e2);
+}
+
+a:hover span:nth-child(4) {
+  bottom: 100%;
+  transition: 1s;
+  transition-delay: .75s;
+}
+
+
+/* ARTICULOS ES SU PADRE es parte de articulos */
+
+/* PHOTOS SERVICES WITH PRICE*/
+
+.services {
+  display: flex;
+  flex-direction: row;
+  gap: 5%;
+  justify-content: center;
+  align-items: center;
+}
+
+.navegacion {
+  /* background: #70a3c4; */
+
+  flex-direction: row;
+  display: flex;
+
+  align-items: center;
+  align-content: space-around;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+
+
+.oil_price {
+  display: flex;
+  width: 450px;
+  height: 270px;
+  top: -15px;
+  position: relative;
+  font-size: 24px;
+  box-shadow: 20px 15px 4px rgb(5, 59, 59);
+}
+
+
+.detail_price {
+  display: flex;
+  width: 450px;
+  height: 270px;
+  top: -15px;
+  position: relative;
+  font-size: 24px;
+  box-shadow: 20px 15px 4px rgb(5, 59, 59);
+}
+
+
+.car_wash_price {
+  display: flex;
+  width: 450px;
+  height: 270px;
+  top: -15px;
+  position: relative;
+  font-size: 24px;
+  box-shadow: 20px 15px 4px rgb(5, 59, 59);
+}
+
+
+/* este tiene la misma gerarquia que articulos */
+/* .aside {
+  background: #f73f52;
+  flex: 1 1 auto;
+} */
+
+/* this is the aside son */
+/* .publicidad {
+  background: #ffea85;
+} */
+
+/* TERCER PADRE */
+.footer {
+  /* background: #000; */
+  display: flex;
+  justify-content: center;
+}
+
+.pie {
+  /* background: #e6af2e; */
+  width: 100%;
+  justify-content: center;
+  cursor: pointer;
+  color: silver;
+
+}
+
+@media all and (max-width: 820px) {
+
+  .buttom {
+    display: none;
+  }
+
+  #hamburger-icon div {
+    z-index: 1;
+  }
+
+  #hamburger-icon {
+    display: block;
+
+  }
+
+  #mobile-menu a {
+    background: rgba(83, 87, 93, 0.8);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, .37);
+    backdrop-filter: blur(20px);
+    width: 100%;
+    color: white;
+    z-index: 2;
+    text-align: center;
+    text-transform: uppercase;
+    display: table-cell;
+    vertical-align: middle;
+    align-items: center;
+  }
+
+  .section {
+    flex-direction: column;
+  }
+
+  .menu {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .aside {
+    display: flex;
+    justify-content: center;
+  }
+
+  .services {
+    flex-direction: column;
+  }
+
+  .slideshow-container {
+    margin-bottom: 5%;
+  }
+
+  .img_1 {
+    height: 21vh;
+  }
+
+  .services {
+    flex-direction: column;
+    gap: inherit;
+  }
+
+  .oil_price {
+    width: 41vh;
+    height: 21vh;
+  }
+
+  .detail_price {
+    width: 41vh;
+    height: 21vh;
+  }
+
+  .car_wash_price {
+    width: 41vh;
+    height: 21vh;
+  }
+
+  .nav a {
+    font-size: 10px;
+  }
+
+  .nav {
+    gap: 1vh;
+    flex-direction: column;
+
+  }
+
+  .dot {
+    display: none;
+  }
+
+  .slideshow-container {
+    margin-bottom: 5%;
+  }
+
+  .logo {
+    width: 30%;
+    height: 15vh;
+    margin-top: -66px;
+  }
+
+}
+
+@media all and (max-width: 600px) {
+
+  .buttom {
+    display: none;
+  }
+
+  #hamburger-icon div {
+    z-index: 1;
+  }
+
+  #hamburger-icon {
+    display: block;
+
+  }
+
+  #mobile-menu a {
+    background: rgba(83, 87, 93, 0.8);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, .37);
+    backdrop-filter: blur(20px);
+    width: 100%;
+    color: white;
+    z-index: 2;
+    text-align: center;
+    text-transform: uppercase;
+    display: table-cell;
+    vertical-align: middle;
+    align-items: center;
+  }
+
+  .articulos {
+    flex-direction: column;
+  }
+
+  .img_1 {
+    height: 21vh;
+  }
+
+  .services {
+    flex-direction: column;
+    gap: inherit;
+  }
+
+  .oil_price {
+    width: 38vh;
+    height: 21vh;
+  }
+
+  .detail_price {
+    width: 38vh;
+    height: 21vh;
+  }
+
+  .car_wash_price {
+    width: 38vh;
+    height: 21vh;
+  }
+
+  .nav a {
+    font-size: 10px;
+  }
+
+  .nav {
+    gap: 1vh;
+    flex-direction: column;
+
+  }
+
+  .dot {
+    display: none;
+  }
+
+  .slideshow-container {
+    margin-bottom: 5%;
+  }
+
+  .logo {
+    width: 50%;
+    height: 15vh;
+    margin-top: -66px;
+  }
+
+  .footer {
+    font-size: 11px;
+  }
+
+}
+
+
+/* @media only screen and (max-width:500px) {
+
+  .buttom {
+    display: none;
+  }
+
+  #hamburger-icon div {
+    z-index: 1;
+  }
+
+  #hamburger-icon {
+    display: block;
+
+  }
+
+  #mobile-menu a {
+    background: rgba(83, 87, 93, 0.8);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, .37);
+    backdrop-filter: blur(20px);
+    width: 100%;
+    color: white;
+    z-index: 2;
+    text-align: center;
+    text-transform: uppercase;
+    display: table-cell;
+    vertical-align: middle;
+    align-items: center;
+  }
+
+
+  .prev,
+  .next,
+  .text {
+    font-size: 14px;
+  }
+
+  .dot {
+    height: 10px;
+    width: 10px;
+  }
+
+  .oil-options {
+    margin: 7px 8px;
+    align-content: center;
+    justify-content: start;
+    align-items: end;
+    justify-items: center;
+    width: 80%;
+  }
+} */
+
+
+@media all and (max-width: 500px) {
+
+  .buttom {
+    display: none;
+  }
+
+  #hamburger-icon div {
+    z-index: 1;
+  }
+
+  #hamburger-icon {
+    display: block;
+
+  }
+
+  #mobile-menu a {
+    background: rgba(83, 87, 93, 0.8);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, .37);
+    backdrop-filter: blur(20px);
+    width: 100%;
+    color: white;
+    z-index: 2;
+    text-align: center;
+    text-transform: uppercase;
+    display: table-cell;
+    vertical-align: middle;
+    align-items: center;
+  }
+
+  .aside {
+    flex-direction: column;
+  }
+
+  .oil-options {
+    margin: 7px 8px;
+    align-content: center;
+    justify-content: start;
+    align-items: end;
+    justify-items: center;
+    width: 80%;
+  }
+
+}
+
+@media only screen and (max-width:300px) {
+
+  .buttom {
+    display: none;
+  }
+
+  #hamburger-icon div {
+    z-index: 1;
+  }
+
+  #hamburger-icon {
+    display: block;
+
+  }
+
+  #mobile-menu a {
+    background: rgba(83, 87, 93, 0.8);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, .37);
+    backdrop-filter: blur(20px);
+    width: 100%;
+    color: white;
+    z-index: 2;
+    text-align: center;
+    text-transform: uppercase;
+    display: table-cell;
+    vertical-align: middle;
+    align-items: center;
+  }
+
+
+  .prev,
+  .next,
+  .text {
+    font-size: 11px;
+  }
+
+  .dot {
+    height: 10px;
+    width: 10px;
+  }
+
+
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+}
